@@ -17,4 +17,21 @@ class MedianTest : FreeSpec({
     }
 
     // Write four more tests here
+    "Single value"{
+        median(listOf(5.0f)) shouldBe (5.0f plusOrMinus tolerance)
+    }
+
+    "Odd number of elements"{
+        median(listOf(5.0f,6.0f,7.0f)) shouldBe (6.0f plusOrMinus tolerance)
+    }
+
+    "Even number of elements"{
+        median(listOf(6.0f,7.0f)) shouldBe (6.5f plusOrMinus tolerance)
+    }
+
+    "Unsorted array"{
+        median(listOf(9.0f, 2.0f, 7.0f, 4.0f,5.0f)) shouldBe (5.0f plusOrMinus tolerance)
+    }
+
+
 })
